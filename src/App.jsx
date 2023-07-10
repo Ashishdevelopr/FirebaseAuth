@@ -3,14 +3,25 @@ import './App.css'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
 import Home from './components/Home'
+import { useEffect, useState } from 'react'
+import { auth } from './config/firebase'
 
 function App() {
 
+  const [username,setUsername] = useState("")
+
+  useEffect(()=>{
+    auth.onAuthStateChanged((user)=>{
+      if(user){
+        setUsername(user.displayName)
+      }else setUsername("")
+    })
+  },[])
   return (
     <>
     <h3 className='auth-title'>Login & SignUp Auth</h3>
     <Routes>
-      <Route path='/' element={<Home/>}></Route>
+      <Route path='/' element={<Home name={username}/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/signup' element={<SignUp/>}></Route>
     </Routes>

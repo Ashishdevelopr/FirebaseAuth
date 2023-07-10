@@ -6,7 +6,8 @@
 }
 
 body{
-background-color: #FCBF49;
+/* background-color: #FCBF49; */
+background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
   font-family: 'Clash Display', sans-serif;
   padding: 0px;
   margin: 0px;
@@ -55,12 +56,22 @@ background-color: #FCBF49;
   font-size: 16px;
   font-family: 'Clash Display', sans-serif;
   font-weight: 700;
+  text-decoration: none !important;
 }
 
 .auth-button:hover{
   background-color: black;
   color: white;
 }
+
+
+.home-button{
+  text-decoration: none;
+  color: white;
+}
+
+
+
 .inner-style p{
   font-size: 35px;
   margin: 0px;
@@ -87,7 +98,7 @@ background-color: #FCBF49;
 }
 
 .footer-link{
-  color: #E2FCFC;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -95,6 +106,9 @@ background-color: #FCBF49;
   .inner-style{
     width: 80%;
     margin-top: 20px;
+  }
+  .footer{
+    font-size: 14px;
   }
 }
 @media (max-width: 365px) {
@@ -106,3 +120,14 @@ background-color: #FCBF49;
   }
 }
 
+.error-msg{
+  text-align: start;
+  font-size: 12px;
+  font-weight: 700;
+  color: red;
+  margin: 0px;
+}
+
+.outer-auth button:disabled{
+  background-color: gray !important;
+}

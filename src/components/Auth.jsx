@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
-import {auth, googleProvider} from "../config/firebase"
-import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import {auth} from "../config/firebase"
+import { createUserWithEmailAndPassword } from 'firebase/auth'
+
+
+//  Just for practice 
+
 
 const Auth = () => {
     const [email, setEmail] = useState()
@@ -23,7 +27,6 @@ const Auth = () => {
         <input type="email" placeholder='Enter your email' onChange={(e)=>{setEmail(e.target.value)}}/>
         <input type="password" placeholder='Enter your password' onChange={(e)=>{setPassword(e.target.value)}}/>
         <button type='submit' onClick={singIn}>SignIn</button>
-        {/* <button type='submit' onClick={singInGoogle}>SignIn with Google</button> */}
     </div>
   )
 }
